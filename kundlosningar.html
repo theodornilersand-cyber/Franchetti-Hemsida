@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<script>
+(function(){
+  var html = document.documentElement;
+  html.classList.add('js');
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    html.classList.add('reduced-motion');
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%232C2C2A%27/%3E%3Cpath%20d%3D%27M16%207%20L16%2025%27%20stroke%3D%27%23F1EFE8%27%20stroke-width%3D%272%27/%3E%3Cpath%20d%3D%27M16%207%20L12.5%2013%20L19.5%2013%20Z%27%20fill%3D%27%23F1EFE8%27/%3E%3Cpath%20d%3D%27M16%2025%20L12.5%2019%20L19.5%2019%20Z%27%20fill%3D%27%23F1EFE8%27/%3E%3C/svg%3E">
+<title>Kundlösningar — Franchetti</title>
+<meta name="description" content="Tre sätt att arbeta med Franchetti: agentmodell för kedjor med egen import, grossist 2.0 för växande varumärken, och retainer för uniform- och inköpskunder med återkommande volymer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,300..560&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Hoppa till innehåll</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="wordmark">FRANCHETTI</a>
+    <nav aria-label="Huvudmeny">
+      <a href="/foretaget.html">Företaget</a>
+      <a href="/tjanster.html">Tjänster</a>
+      <a href="/kategorier.html">Kategorier</a>
+      <a href="/kundlosningar.html">Kundlösningar</a>
+      <a href="/bevis.html">Bevis</a>
+      <a href="/kontakt.html" class="nav-cta">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-header">
+    <div class="wrap">
+      <p class="eyebrow">Kundlösningar</p>
+      <h1>Tre sätt att arbeta med oss</h1>
+      <p class="lead">Vilken modell som passar beror på om ni redan importerar själva, bygger ett varumärke från grunden, eller köper återkommande volymer.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="wrap">
+      <div class="track-grid" data-reveal-group>
+
+        <div class="track-card">
+          <span class="eyebrow">Spår 1</span>
+          <h3>Kedjor med egen import</h3>
+          <p>Ni står som importör och tar varan direkt från fabrik. Vi säljer sourcing, utveckling och kvalitetskontroll som tjänst — ingen lagerrisk för oss, full kontroll för er.</p>
+          <a href="/kundlosningar-kedjor.html" class="more">Läs om agentmodellen →</a>
+        </div>
+
+        <div class="track-card">
+          <span class="eyebrow">Spår 2</span>
+          <h3>Växande varumärken</h3>
+          <p>Vi äger varuflödet men på nya villkor: förskott, indexklausuler och tydligt fördelat ansvar för minsta ordervolym. Full service, rättvist prissatt.</p>
+          <a href="/kundlosningar-varumarken.html" class="more">Läs om grossist 2.0 →</a>
+        </div>
+
+        <div class="track-card">
+          <span class="eyebrow">Spår 3</span>
+          <h3>Uniform och återkommande inköp</h3>
+          <p>En fast månadsavgift gör oss till er externa inköpsavdelning. Perfekt för hotell, vård, säkerhet och andra med löpande behov av arbetskläder.</p>
+          <a href="/kundlosningar-uniform.html" class="more">Läs om retainer-modellen →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section alt">
+    <div class="wrap" data-reveal-group>
+      <h2>Osäker på vilket spår som passar?</h2>
+      <p>De flesta kunder vet inte vilken modell de behöver förrän vi pratat om volym, importvana och hur mycket av kedjan ni redan hanterar själva. Boka ett kort samtal så visar vi vad som passar er situation.</p>
+      <a href="/kontakt.html" class="link-cta">Boka ett samtal</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>R. Franchetti AB · Box 3155, 400 10 Göteborg · Gamla Almedalsvägen 1D, 412 63 Göteborg</p>
+    <p>Tel: +46 31 81 04 50 · <a href="mailto:info@franchetti.se">info@franchetti.se</a></p>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/SplitText.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script src="js/site.js" defer></script>
+</body>
+</html>

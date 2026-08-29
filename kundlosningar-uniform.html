@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<script>
+(function(){
+  var html = document.documentElement;
+  html.classList.add('js');
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    html.classList.add('reduced-motion');
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%232C2C2A%27/%3E%3Cpath%20d%3D%27M16%207%20L16%2025%27%20stroke%3D%27%23F1EFE8%27%20stroke-width%3D%272%27/%3E%3Cpath%20d%3D%27M16%207%20L12.5%2013%20L19.5%2013%20Z%27%20fill%3D%27%23F1EFE8%27/%3E%3Cpath%20d%3D%27M16%2025%20L12.5%2019%20L19.5%2019%20Z%27%20fill%3D%27%23F1EFE8%27/%3E%3C/svg%3E">
+<title>Retainer — extern inköpsavdelning — Franchetti</title>
+<meta name="description" content="Franchettis retainer-modell för uniform, profilkläder och andra återkommande inköp: fast månadsavgift, extern inköpsavdelning, och automatisk påfyllnad av basplagg.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,300..560&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Hoppa till innehåll</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="wordmark">FRANCHETTI</a>
+    <nav aria-label="Huvudmeny">
+      <a href="/foretaget.html">Företaget</a>
+      <a href="/tjanster.html">Tjänster</a>
+      <a href="/kategorier.html">Kategorier</a>
+      <a href="/kundlosningar.html">Kundlösningar</a>
+      <a href="/bevis.html">Bevis</a>
+      <a href="/kontakt.html" class="nav-cta">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-header">
+    <div class="wrap">
+      <a href="/kundlosningar.html" class="breadcrumb">← Kundlösningar</a><br>
+      <p class="eyebrow">Spår 3 — Retainer</p>
+      <h1>Er externa inköpsavdelning</h1>
+      <p class="lead">Hotell, vård, säkerhet och andra verksamheter med löpande behov av uniform och profilkläder. En fast månadsavgift istället för att bygga upp egen inköpskompetens.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="wrap">
+
+      <div class="track-meta" data-reveal-group>
+        <div><div class="label">Passar er om</div><div class="value">Ni har återkommande volymer</div></div>
+        <div><div class="label">Avgift</div><div class="value">Fast, per månad</div></div>
+        <div><div class="label">Påfyllnad</div><div class="value">Automatisk vid behov</div></div>
+        <div><div class="label">Spårbarhet</div><div class="value">Ingår som standard</div></div>
+      </div>
+
+      <h2 data-reveal>Hur det fungerar</h2>
+      <p data-reveal>Personal slits, bokstavligen — arbetskläder och uniform behöver fyllas på kontinuerligt. Med en retainer blir Franchetti er externa inköpsavdelning för just detta: vi håller koll på lagernivåer, sköter produktion och leverans, och fakturerar en förutsägbar summa varje månad istället för enskilda, oregelbundna ordrar.</p>
+      <p data-reveal>För verksamheter med ökande hållbarhetskrav — vård, offentlig upphandling, hotell — ingår spårbarhetsdokumentation som standard, inte som tillägg.</p>
+
+      <h2 data-reveal>Vad som ingår</h2>
+      <p data-reveal>Löpande behovsplanering, produktion och kvalitetskontroll, leverans enligt överenskommet schema, samt spårbarhets- och hållbarhetsunderlag för er egen rapportering.</p>
+
+    </div>
+  </section>
+
+  <section class="content-section alt">
+    <div class="wrap" data-reveal-group>
+      <h2>Är det här er modell?</h2>
+      <p>Passar bäst för verksamheter med personal som behöver enhetlig klädsel år efter år, inte bara en engångskollektion.</p>
+      <a href="/kontakt.html" class="link-cta">Boka ett samtal</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>R. Franchetti AB · Box 3155, 400 10 Göteborg · Gamla Almedalsvägen 1D, 412 63 Göteborg</p>
+    <p>Tel: +46 31 81 04 50 · <a href="mailto:info@franchetti.se">info@franchetti.se</a></p>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/SplitText.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script src="js/site.js" defer></script>
+</body>
+</html>

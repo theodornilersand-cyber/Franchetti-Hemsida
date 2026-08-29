@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<script>
+(function(){
+  var html = document.documentElement;
+  html.classList.add('js');
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    html.classList.add('reduced-motion');
+  }
+})();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%277%27%20fill%3D%27%232C2C2A%27/%3E%3Cpath%20d%3D%27M16%207%20L16%2025%27%20stroke%3D%27%23F1EFE8%27%20stroke-width%3D%272%27/%3E%3Cpath%20d%3D%27M16%207%20L12.5%2013%20L19.5%2013%20Z%27%20fill%3D%27%23F1EFE8%27/%3E%3Cpath%20d%3D%27M16%2025%20L12.5%2019%20L19.5%2019%20Z%27%20fill%3D%27%23F1EFE8%27/%3E%3C/svg%3E">
+<title>Tjänster — Franchetti</title>
+<meta name="description" content="Franchettis tjänstekatalog: design och kollektionsutveckling, passform och gradering, fabrikssourcing, kvalitetskontroll, logistik och tull, samt spårbarhet och ESG-underlag. Priser per tjänst, inte bara i varupåslaget.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,300..560&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Hoppa till innehåll</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="/" class="wordmark">FRANCHETTI</a>
+    <nav aria-label="Huvudmeny">
+      <a href="/foretaget.html">Företaget</a>
+      <a href="/tjanster.html">Tjänster</a>
+      <a href="/kategorier.html">Kategorier</a>
+      <a href="/kundlosningar.html">Kundlösningar</a>
+      <a href="/bevis.html">Bevis</a>
+      <a href="/kontakt.html" class="nav-cta">Kontakt</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-header">
+    <div class="wrap">
+      <p class="eyebrow">Tjänster</p>
+      <h1>Det ni redan gör åt kunderna — nu prissatt separat</h1>
+      <p class="lead">Design, sourcing och kvalitetskontroll har alltid ingått i vårt arbete. Här är det uppdelat och prissatt, så att värdet syns innan varan gör det.</p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="wrap">
+      <ul class="service-detail-list" style="list-style:none;" data-reveal-group>
+
+        <li class="service-detail">
+          <h3>Design och kollektionsutveckling</h3>
+          <p>Konceptarbete, skisser, moodboards och materialval fram till en godkänd kollektion. Grunden i allt vi bygger vidare på.</p>
+          <span class="price-tag">Per stil</span>
+        </li>
+
+        <li class="service-detail">
+          <h3>Passform och gradering</h3>
+          <p>Måttsättning, provplagg och gradering till fullständig storleksserie, anpassad efter er målgrupp.</p>
+          <span class="price-tag">Per stil</span>
+        </li>
+
+        <li class="service-detail">
+          <h3>Fabrikssourcing</h3>
+          <p>Val av rätt fabrik i vårt nätverk, prisförhandling och kontraktshantering. Vi äger relationen, ni äger resultatet.</p>
+          <span class="price-tag">Provision</span>
+        </li>
+
+        <li class="service-detail">
+          <h3>Kvalitetskontroll på plats</h3>
+          <p>Fabriksinspektion inför och under produktion, enligt de kontrollpunkter som är relevanta för produkttypen.</p>
+          <span class="price-tag">Per inspektion</span>
+        </li>
+
+        <li class="service-detail">
+          <h3>Logistik och tull</h3>
+          <p>Fraktbokning, dokumentation och tullhantering från fabrik till ert lager eller er butik.</p>
+          <span class="price-tag">Per sändning</span>
+        </li>
+
+        <li class="service-detail">
+          <h3>Spårbarhet och ESG-underlag</h3>
+          <p>Dokumentation för hållbarhetsrapportering och spårbarhetskrav — det som era egna kunder alltmer efterfrågar.</p>
+          <span class="price-tag">Retainer</span>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <section class="content-section alt">
+    <div class="wrap" data-reveal-group>
+      <h2>Hur ni köper tjänsterna beror på vem ni är</h2>
+      <p>Tjänsterna ovan kombineras olika beroende på om ni importerar själva, behöver hela kedjan, eller köper återkommande volymer. Se de tre sätten att arbeta med oss.</p>
+      <a href="/kundlosningar.html" class="link-cta">Se kundlösningarna</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>R. Franchetti AB · Box 3155, 400 10 Göteborg · Gamla Almedalsvägen 1D, 412 63 Göteborg</p>
+    <p>Tel: +46 31 81 04 50 · <a href="mailto:info@franchetti.se">info@franchetti.se</a></p>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js" defer></script>
+<script src="vendor/ScrollTrigger.min.js" defer></script>
+<script src="vendor/SplitText.min.js" defer></script>
+<script src="vendor/lenis.min.js" defer></script>
+<script src="js/site.js" defer></script>
+</body>
+</html>

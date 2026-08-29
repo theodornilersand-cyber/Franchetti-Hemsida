@@ -1,0 +1,71 @@
+# Franchetti
+
+> Franchetti (R. Franchetti AB) är en Göteborgsbaserad private label-partner för klädföretag: design, produktutveckling, fabrikssourcing, kvalitetskontroll, logistik och hållbarhetsdokumentation. Vi levererar hela eller delar av kedjan under kundens eget varumärke.
+
+## Grundfakta
+
+- Plats: Gamla Almedalsvägen 1D, 412 63 Göteborg, Sverige
+- Postadress: Box 3155, 400 10 Göteborg
+- Grundår: 1968
+- Anställda: 19
+- Omsättning: ca 112 Mkr
+- Kundtyp: Svenska och skandinaviska klädkedjor, varumärken och verksamheter med löpande behov av arbetskläder
+
+## Tjänster
+
+- **Design och kollektionsutveckling** — Konceptarbete, skisser, moodboards och materialval fram till en godkänd kollektion.
+- **Passform och gradering** — Måttsättning, provplagg och gradering till fullständig storleksserie.
+- **Fabrikssourcing** — Val av rätt fabrik i Franchettis nätverk, prisförhandling och kontraktshantering.
+- **Kvalitetskontroll på plats** — Fabriksinspektion inför och under produktion.
+- **Logistik och tull** — Fraktbokning, dokumentation och tullhantering från fabrik till lager eller butik.
+- **Spårbarhet och ESG-underlag** — Dokumentation för hållbarhetsrapportering och spårbarhetskrav.
+
+## Kundlösningar (tre kommersiella spår)
+
+1. **Agentmodellen** — för kedjor med egen import. Franchetti säljer sourcing, utveckling och kvalitetskontroll som tjänst; kunden importerar direkt från fabrik och behåller kontrollen. Ingen lagerrisk för Franchetti.
+2. **Grossist 2.0** — för växande varumärken utan egen importkapacitet. Franchetti äger varuflödet från fabrik till leverans, mot förskottsbetalning och indexklausuler för valuta/frakt.
+3. **Retainer** — för uniform- och arbetsklädeskunder med återkommande volymer. Fast månadsavgift, automatisk påfyllnad, spårbarhet ingår som standard.
+
+## Kategorier
+
+- Damkläder
+- Herrkläder
+- Barnkläder
+- Sportkläder
+- Ytterkläder
+- Underkläder och accessoarer
+
+## Process
+
+1. Skiss och design
+2. Sourcing och fabriksval
+3. Produktion
+4. Kvalitetskontroll
+5. Leverans
+
+## Sidstruktur
+
+- `/` — startsida
+- `/foretaget.html` — om företaget
+- `/tjanster.html` — tjänstekatalog
+- `/kategorier.html` — produktkategorier
+- `/kundlosningar.html` — översikt över de tre kundspåren
+- `/kundlosningar-kedjor.html`, `/kundlosningar-varumarken.html`, `/kundlosningar-uniform.html` — respektive spår i detalj
+- `/bevis.html` — kundcase och kvalitetsprocess
+- `/kontakt.html` — kontaktformulär och kontaktuppgifter
+
+## Kontakt
+
+- E-post: info@franchetti.se
+- Telefon: +46 31 81 04 50
+- Besöksadress: Gamla Almedalsvägen 1D, 412 63 Göteborg
+- Postadress: Box 3155, 400 10 Göteborg
+- Webb: https://www.franchetti.se/
+
+## Fortfarande obekräftat
+
+- Antal fabriker i nätverket
+- Typisk ledtid
+- Företagets historik (kort version)
+- Namngivna ledningsprofiler
+- Kundcase (väntar på kundtillstånd)
