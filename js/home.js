@@ -1,122 +1,111 @@
 /*
- * index.html only — laddas efter site.js, som redan äger Lenis,
- * reduced-motion-spärrarna och det generella [data-reveal]-systemet.
- *
- * 1. Hero: rubrikens två rader glider upp bakom en mask.
- * 2. Affärsområden: pilknappar + räknare för den horisontella karusellen
- *    (fungerar även utan GSAP och under reduced motion).
- * 3. Footer: bokstäverna i jätteordmärket reser sig när man scrollar dit.
+ * index.html only — hero SplitText intro + pattern-piece motif draw-on,
+ * and the pinned process narrative (desktop) / stacked fallback (mobile).
+ * Loaded after site.js, which already owns Lenis, the reduced-motion
+ * gates, and the generic [data-reveal] system used everywhere else.
  */
 (function () {
   'use strict';
 
-  // ---------- 2. Karusell (ingen GSAP krävs) ----------
-  function initAreas() {
-    var track = document.querySelector('.area-track');
-    if (!track) return;
-    var items = Array.prototype.slice.call(track.children);
-    var prev = document.querySelector('.areas-prev');
-    var next = document.querySelector('.areas-next');
-    var current = document.querySelector('.areas-current');
-    var reduced = document.documentElement.classList.contains('reduced-motion');
-
-    function step() {
-      if (items.length < 2) return track.clientWidth;
-      return items[1].offsetLeft - items[0].offsetLeft;
-    }
-
-    function index() {
-      return Math.round(track.scrollLeft / step());
-    }
-
-    function update() {
-      var i = Math.min(items.length - 1, Math.max(0, index()));
-      var atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
-      if (atEnd) i = items.length - 1;
-      if (current) current.textContent = String(i + 1).padStart(2, '0');
-      if (prev) prev.disabled = track.scrollLeft <= 2;
-      if (next) next.disabled = atEnd;
-    }
-
-    function go(dir) {
-      track.scrollBy({ left: dir * step(), behavior: reduced ? 'auto' : 'smooth' });
-    }
-
-    if (prev) prev.addEventListener('click', function () { go(-1); });
-    if (next) next.addEventListener('click', function () { go(1); });
-    track.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
-    window.addEventListener('resize', update);
-    update();
-  }
-
-  initAreas();
-
-  // Jätteordmärket i sidfoten ska fylla exakt hela bredden, oavsett typsnitt.
-  function fitFooterMark() {
-    var mark = document.querySelector('.footer-mark');
-    if (!mark) return;
-    var box = mark.parentNode;
-    var avail = box.clientWidth - parseFloat(getComputedStyle(box).paddingLeft) - parseFloat(getComputedStyle(box).paddingRight);
-    mark.style.fontSize = '100px';
-    mark.style.display = 'inline-block';
-    var w = mark.scrollWidth;
-    mark.style.display = '';
-    if (w > 0) mark.style.fontSize = (100 * avail / w) + 'px';
-  }
-  fitFooterMark();
-  window.addEventListener('resize', fitFooterMark);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitFooterMark);
-
   if (typeof gsap === 'undefined') return;
 
-  // ---------- 1. Hero ----------
+  var hasPlayedHeroIntro = false;
+
   function heroIntro() {
-    var lines = gsap.utils.toArray('.hero h1 .line');
-    var label = document.querySelector('.hero .label');
-    var facts = gsap.utils.toArray('.hero-facts li');
-    if (!lines.length) return;
+    var h1 = document.querySelector('.hero h1');
+    var motifIds = ['#motif-bodice', '#motif-grainline', '#motif-sleeve', '#motif-collar'];
+    var motifPaths = motifIds
+      .map(function (sel) { return document.querySelector(sel); })
+      .filter(Boolean);
 
-    // Varje rad får en egen mask så att texten glider upp "ur golvet".
-    lines.forEach(function (line) {
-      var mask = document.createElement('span');
-      mask.style.display = 'block';
-      mask.style.overflow = 'hidden';
-      mask.style.paddingBottom = '0.08em';
-      mask.style.marginBottom = '-0.08em';
-      line.parentNode.insertBefore(mask, line);
-      mask.appendChild(line);
+    motifPaths.forEach(function (path) {
+      var len = path.getTotalLength();
+      gsap.set(path, { strokeDasharray: len, strokeDashoffset: len });
     });
 
-    var tl = gsap.timeline({ defaults: { ease: 'power4.out' } });
-    tl.from(lines, { yPercent: 110, duration: 1.1, stagger: 0.12 })
-      .from(label, { opacity: 0, y: 8, duration: 0.6 }, 0.2)
-      .from(facts, { opacity: 0, y: 8, duration: 0.6, stagger: 0.08 }, 0.5);
+    function playMotif() {
+      gsap.to(motifPaths, { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut' });
+    }
+
+    if (!h1) {
+      playMotif();
+      return;
+    }
+
+    SplitText.create(h1, {
+      type: 'words',
+      autoSplit: true,
+      onSplit: function (self) {
+        // Re-splits happen on font swap/resize (autoSplit) — only animate
+        // the real first play; later resplits just snap to the end state
+        // so resizing the window doesn't replay the intro.
+        if (hasPlayedHeroIntro) {
+          gsap.set(self.words, { opacity: 1, y: 0 });
+          gsap.set(motifPaths, { strokeDashoffset: 0 });
+          return;
+        }
+        hasPlayedHeroIntro = true;
+        playMotif();
+        return gsap.from(self.words, {
+          opacity: 0,
+          y: 20,
+          duration: 0.7,
+          ease: 'power3.out',
+          stagger: 0.04,
+        });
+      },
+    });
   }
 
-  // ---------- 3. Footer-ordmärke ----------
-  function footerMark() {
-    var mark = document.querySelector('.footer-mark');
-    if (!mark) return;
-    var text = mark.textContent;
-    mark.textContent = '';
-    mark.style.overflow = 'hidden';
-    text.split('').forEach(function (ch) {
-      var span = document.createElement('span');
-      span.className = 'char';
-      span.textContent = ch;
-      mark.appendChild(span);
-    });
-    gsap.from(mark.querySelectorAll('.char'), {
-      yPercent: 100,
-      duration: 1,
-      ease: 'power4.out',
-      stagger: 0.04,
-      scrollTrigger: { trigger: mark, start: 'top 95%', once: true },
+  function processPinned() {
+    var section = document.querySelector('.process');
+    if (!section) return;
+    var pin = section.querySelector('.process-pin');
+    var steps = gsap.utils.toArray('.process-step', section);
+    var fill = section.querySelector('.process-progress-fill');
+    var current = section.querySelector('.process-progress-current');
+    if (!steps.length) return;
+
+    section.setAttribute('data-pinned', '');
+    steps[0].classList.add('is-active');
+
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top top',
+      end: '+=' + steps.length * 100 + '%',
+      pin: pin,
+      scrub: 1,
+      onUpdate: function (self) {
+        var idx = Math.min(steps.length - 1, Math.floor(self.progress * steps.length));
+        steps.forEach(function (step, i) {
+          step.classList.toggle('is-active', i === idx);
+        });
+        if (fill) fill.style.width = self.progress * 100 + '%';
+        if (current) current.textContent = String(idx + 1).padStart(2, '0');
+      },
     });
   }
 
-  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', function () {
-    heroIntro();
-    footerMark();
-  });
+  function processMobile() {
+    var section = document.querySelector('.process');
+    if (!section) return;
+    var steps = gsap.utils.toArray('.process-step', section);
+    steps.forEach(function (step) {
+      gsap.from(step, {
+        opacity: 0,
+        y: 12,
+        duration: 0.5,
+        ease: 'power3.out',
+        scrollTrigger: { trigger: step, start: 'top 85%', once: true },
+      });
+    });
+  }
+
+  // Hero intro runs at any viewport width, as long as motion is allowed.
+  gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', heroIntro);
+
+  // Process narrative: pinned/scrubbed on desktop, plain stacked fade on
+  // mobile — never both, matchMedia only ever runs the branch that matches.
+  gsap.matchMedia().add('(min-width: 900px) and (prefers-reduced-motion: no-preference)', processPinned);
+  gsap.matchMedia().add('(max-width: 899px) and (prefers-reduced-motion: no-preference)', processMobile);
 })();
