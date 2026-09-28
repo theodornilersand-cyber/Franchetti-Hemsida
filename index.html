@@ -17,8 +17,8 @@
 <meta name="description" content="Franchetti är en svensk private label-partner baserad i Göteborg. Vi hjälper klädföretag att utveckla, sourca och producera kollektioner under eget varumärke — design, fabrikssourcing, kvalitetskontroll och logistik i en helhet.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,300..560&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="home.css">
 
 <!-- Grundläggande Organization-schema. Lägg till "logo" och "foundingDate"
      när ni har en riktig logotyp-URL och har verifierat grundåret. -->
@@ -141,176 +141,204 @@
 
 <header class="site-header">
   <div class="wrap header-inner">
-    <a href="/" class="wordmark">FRANCHETTI</a>
-    <nav aria-label="Huvudmeny">
-      <a href="/foretaget.html">Företaget</a>
-      <a href="/tjanster.html">Tjänster</a>
-      <a href="/kategorier.html">Kategorier</a>
-      <a href="/kundlosningar.html">Kundlösningar</a>
-      <a href="/bevis.html">Bevis</a>
-      <a href="/kontakt.html" class="nav-cta">Kontakt</a>
+    <a href="/" class="wordmark" aria-label="Franchetti – startsida">FRANCHETTI</a>
+    <nav class="site-nav" aria-label="Huvudmeny">
+      <a href="/foretaget.html" class="nav-optional">Om oss</a>
+      <a href="#process">Process</a>
+      <a href="#kundcase">Kundcase</a>
+      <a href="/kontakt.html">Kontakt</a>
     </nav>
   </div>
 </header>
 
 <main id="main">
 
-  <section class="hero">
-    <!-- Decorative pattern-piece linework: real garment construction geometry
-         (bodice block, sleeve cap, collar — grainline, notches, seam
-         allowance), not stock imagery or an illustration of a product.
-         Inert without JS: renders fully drawn-in at low opacity. -->
-    <svg class="hero-motif" viewBox="0 0 500 600" aria-hidden="true" focusable="false">
-      <!-- Bodice front block -->
-      <path id="motif-bodice" class="hero-motif-line" d="M170,40 C195,22 235,22 260,40 L280,95 C288,170 282,245 258,310 L258,360 L145,360 L145,310 C121,245 115,170 123,95 Z" stroke-width="1.25" />
-      <!-- Seam allowance, marked inside the cut line (static, not drawn-on) -->
-      <path class="hero-motif-line hero-motif-dashed" d="M175,55 C195,42 225,42 245,55 L262,98 C269,168 264,235 245,295 L245,340 L160,340 L160,295 C141,235 136,168 143,98 Z" stroke-dasharray="4 5" />
-      <!-- Grainline, arrowed both ends per pattern-making convention -->
-      <path id="motif-grainline" class="hero-motif-line" d="M200,78 L200,322" />
-      <path class="hero-motif-line" d="M200,78 L194,90 L206,90 Z" fill="rgba(241,239,232,.12)" stroke="none" />
-      <path class="hero-motif-line" d="M200,322 L194,310 L206,310 Z" fill="rgba(241,239,232,.12)" stroke="none" />
-      <!-- Notches -->
-      <path class="hero-motif-line" d="M115,150 L104,153" />
-      <path class="hero-motif-line" d="M288,150 L299,153" />
-      <path class="hero-motif-line" d="M119,255 L107,259" />
-      <path class="hero-motif-line" d="M284,255 L296,259" />
-      <!-- Sleeve cap -->
-      <g transform="translate(320,30)">
-        <path id="motif-sleeve" class="hero-motif-line" d="M0,90 C8,35 45,0 90,0 C135,0 172,35 180,90 L180,120 L0,120 Z" stroke-width="1.25" />
-        <path class="hero-motif-line" d="M90,2 L90,14" />
-      </g>
-      <!-- Collar -->
-      <g transform="translate(330,400)">
-        <path id="motif-collar" class="hero-motif-line" d="M0,25 C15,-5 95,-5 110,25 C98,42 82,50 55,50 C28,50 12,42 0,25 Z" stroke-width="1.25" />
-      </g>
-    </svg>
+  <!-- HERO — mörk fullbredd, byt .hero-media mot bild eller film -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <div class="hero-media" aria-hidden="true"></div>
     <div class="wrap">
-      <p class="eyebrow">Göteborg</p>
-      <h1>Din externa design-, inköps- och produktionsavdelning</h1>
-      <p class="hero-lead">Från första skiss till levererad kollektion under ditt varumärke. Vi tar hela kedjan — eller bara den bit du saknar.</p>
-      <div class="hero-actions">
-        <a href="/kontakt.html" class="link-cta light">Boka ett samtal</a>
-        <a href="/bevis.html" class="link-quiet">Se våra arbeten</a>
-      </div>
+      <p class="hero-note">Bild / film — kollektion, designstudio eller produktion (platshållare)</p>
     </div>
-    <!-- Statistikrad borttagen tills verifierade tal finns (grundår, antal fabriker, ledtid) — se README.md -->
-  </section>
-
-  <section class="segments" aria-labelledby="segments-heading">
-    <div class="wrap">
-      <h2 id="segments-heading" class="eyebrow-heading">Vad behöver du hjälp med</h2>
-      <div class="segment-grid">
-        <article>
-          <span class="segment-num">01</span>
-          <h3>Jag driver en kedja</h3>
-          <p>Du importerar själv men saknar designresurs och fabriksnätverk. Vi tar sourcingprovision, du behåller kontrollen.</p>
-        </article>
-        <article>
-          <span class="segment-num">02</span>
-          <h3>Jag bygger ett varumärke</h3>
-          <p>Du har publiken och idéerna. Vi tar allt mellan skiss och leverans, på villkor anpassade efter din volym.</p>
-        </article>
-        <article>
-          <span class="segment-num">03</span>
-          <h3>Jag köper arbetskläder</h3>
-          <p>Uniform och profil i återkommande volymer, med spårbar produktion och en fast månadsavgift.</p>
-        </article>
+    <div class="wrap hero-bottom">
+      <div>
+        <span class="label">[ Franchetti AB · Göteborg ]</span>
+        <h1 id="hero-heading">
+          <span class="line">Kollektioner som</span>
+          <span class="line">bär ert varumärke.</span>
+        </h1>
       </div>
-    </div>
-  </section>
-
-  <section class="process" aria-labelledby="process-heading">
-    <div class="wrap">
-      <h2 id="process-heading" class="eyebrow-heading" data-reveal>Vår process</h2>
-      <div class="process-progress" aria-hidden="true">
-        <span class="process-progress-num process-progress-current">01</span>
-        <div class="process-progress-track"><div class="process-progress-fill"></div></div>
-        <span class="process-progress-num">05</span>
-      </div>
-      <div class="process-pin">
-        <div class="process-steps">
-          <div class="process-step">
-            <span class="process-step-num">01</span>
-            <h3>Skiss och design</h3>
-            <p>Konceptarbete, skisser, moodboards och materialval fram till en godkänd kollektion.</p>
-          </div>
-          <div class="process-step">
-            <span class="process-step-num">02</span>
-            <h3>Sourcing och fabriksval</h3>
-            <p>Val av rätt fabrik i vårt nätverk, prisförhandling och kontraktshantering.</p>
-          </div>
-          <div class="process-step">
-            <span class="process-step-num">03</span>
-            <h3>Produktion</h3>
-            <p>Tillverkning i den valda fabriken, enligt godkänd design, materialspecifikation och tidsplan.</p>
-          </div>
-          <div class="process-step">
-            <span class="process-step-num">04</span>
-            <h3>Kvalitetskontroll</h3>
-            <p>Fabriksinspektion inför och under produktion, enligt de kontrollpunkter som är relevanta för produkttypen.</p>
-          </div>
-          <div class="process-step">
-            <span class="process-step-num">05</span>
-            <h3>Leverans</h3>
-            <p>Fraktbokning, dokumentation och tullhantering från fabrik till ert lager eller er butik.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cases" aria-labelledby="cases-heading">
-    <h2 id="cases-heading" class="sr-only">Utvalda arbeten</h2>
-    <div class="case-grid">
-      <!-- Ersätt case-image-blocken med riktiga produktfoton (img-taggar) när de finns -->
-      <figure class="case-item">
-        <div class="case-image case-image--a" role="img" aria-label="Platshållare för produktbild, sportkollektion"></div>
-        <figcaption>
-          <span class="eyebrow">Sportkedja</span>
-          <p>8 000 plagg, skiss till butik på 14 veckor</p>
-        </figcaption>
-      </figure>
-      <figure class="case-item">
-        <div class="case-image case-image--b" role="img" aria-label="Platshållare för produktbild, D2C-kollektion"></div>
-        <figcaption>
-          <span class="eyebrow">D2C-varumärke</span>
-          <p>Första kollektionen, från noll produktionskunskap</p>
-        </figcaption>
-      </figure>
-      <figure class="case-item">
-        <div class="case-image case-image--c" role="img" aria-label="Platshållare för produktbild, uniformsprogram"></div>
-        <figcaption>
-          <span class="eyebrow">Hotellkedja</span>
-          <p>Uniformsprogram med löpande påfyllnad</p>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- PLACEHOLDER: grayscale customer-logo strip goes here once real logos
-       exist (see README.md "platshållare" list). No fabricated customer
-       names/logos — leave this section out entirely until real ones are
-       supplied, then add a simple flex/grid row of <img> logos here. -->
-
-  <section class="services" aria-labelledby="services-heading">
-    <div class="wrap">
-      <h2 id="services-heading" class="eyebrow-heading">Tjänster</h2>
-      <ul class="service-list">
-        <li><span>Design och kollektionsutveckling</span><span class="service-price">per stil</span></li>
-        <li><span>Passform och gradering</span><span class="service-price">per stil</span></li>
-        <li><span>Fabrikssourcing</span><span class="service-price">provision</span></li>
-        <li><span>Kvalitetskontroll på plats</span><span class="service-price">per inspektion</span></li>
-        <li><span>Logistik och tull</span><span class="service-price">per sändning</span></li>
-        <li><span>Spårbarhet och ESG-underlag</span><span class="service-price">retainer</span></li>
+      <ul class="hero-facts">
+        <li>Egen designstudio i Göteborg</li>
+        <li>Sex affärsområden</li>
+        <li>Från skiss till leverans</li>
       </ul>
     </div>
   </section>
 
-  <section class="cta">
+  <!-- AFFÄRSIDÉ -->
+  <section class="intro" aria-labelledby="intro-heading">
     <div class="wrap">
-      <h2>Berätta vad du vill ta fram.</h2>
-      <p>Vi återkommer med ett upplägg och en prisindikation inom två arbetsdagar.</p>
-      <a href="/kontakt.html" class="link-cta light">Skicka din förfrågan</a>
+      <div class="rule" aria-hidden="true"></div>
+      <h2 id="intro-heading" data-reveal>Vi utvecklar och producerar modekollektioner.</h2>
+      <div class="split" data-reveal>
+        <span class="label">[ Affärsidé ]</span>
+        <p>Genom ett genuint och nära samarbete hjälper Franchetti aktörer inom modebranschen att utveckla och producera kollektioner – från idé till färdig produkt.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS — bento: ett stort kort, ett brett, två små -->
+  <section class="process" id="process" aria-labelledby="process-heading">
+    <div class="wrap">
+      <div class="split" data-reveal>
+        <span class="label">[ Process ]</span>
+        <h2 id="process-heading" class="process-lead">Fyra steg – från första skiss till färdig kollektion.</h2>
+      </div>
+      <ol class="bento" data-reveal-group>
+        <li class="bento-card bento-card--lg">
+          <span class="bento-num" aria-hidden="true">01</span>
+          <div>
+            <h3>01 – Design</h3>
+            <p>Idé, skiss och formgivning i vår egen designstudio.</p>
+          </div>
+        </li>
+        <li class="bento-card bento-card--wide">
+          <span class="bento-num" aria-hidden="true">02</span>
+          <div>
+            <h3>02 – Develop</h3>
+            <p>Material, passform och prototyper – anpassat efter din målgrupp.</p>
+          </div>
+        </li>
+        <li class="bento-card bento-card--a">
+          <span class="bento-num" aria-hidden="true">03</span>
+          <div>
+            <h3>03 – Deliver</h3>
+            <p>Produktion hos noga utvalda leverantörer och miljöanpassad logistik.</p>
+          </div>
+        </li>
+        <li class="bento-card bento-card--b">
+          <span class="bento-num" aria-hidden="true">04</span>
+          <div>
+            <h3>04 – Decide</h3>
+            <p>Vi utvärderar tillsammans och tar nästa kollektion vidare.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- VISION + NYCKELTAL -->
+  <section class="vision" aria-labelledby="vision-heading">
+    <div class="wrap">
+      <div class="split" data-reveal>
+        <span class="label" id="vision-heading">[ Vision ]</span>
+        <p>Vi skapar inspirerande och värdeskapande kollektioner som stärker, utvecklar och driver våra kunders varumärken.</p>
+      </div>
+      <!-- Fjärde nyckeltalet (antal levererade kollektioner) väntar på
+           verifierat tal — lägg till ett <li> här när det finns. -->
+      <ul class="stats" data-reveal-group>
+        <li><span class="stat-num">6</span><span class="stat-label">Affärsområden – från dam till ytterkläder</span></li>
+        <li><span class="stat-num">4</span><span class="stat-label">Steg från idé till leverans</span></li>
+        <li><span class="stat-num">1</span><span class="stat-label">Egen designstudio i Göteborg</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- KUNDCASE — byt .case-media-blocken mot riktiga foton -->
+  <section class="cases" id="kundcase" aria-labelledby="cases-heading">
+    <div class="wrap">
+      <span class="label" data-reveal>[ Kundcase ]</span>
+      <h2 id="cases-heading" data-reveal>Kollektioner vi har skapat tillsammans med våra kunder.</h2>
+      <div class="case-list">
+        <article class="case case--1" data-reveal>
+          <div class="case-text">
+            <div>
+              <h3>Kund 01</h3>
+              <p class="case-meta">Sportkedja</p>
+            </div>
+            <p>8 000 plagg, från skiss till butik på 14 veckor.</p>
+            <a class="case-link" href="/bevis.html">Se case <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="case-media" role="img" aria-label="Platshållare för produktbild, sportkollektion"><div></div></div>
+        </article>
+        <article class="case case--2" data-reveal>
+          <div class="case-text">
+            <div>
+              <h3>Kund 02</h3>
+              <p class="case-meta">D2C-varumärke</p>
+            </div>
+            <p>Första kollektionen – från noll produktionskunskap.</p>
+            <a class="case-link" href="/bevis.html">Se case <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="case-media" role="img" aria-label="Platshållare för produktbild, D2C-kollektion"><div></div></div>
+        </article>
+        <article class="case case--3" data-reveal>
+          <div class="case-text">
+            <div>
+              <h3>Kund 03</h3>
+              <p class="case-meta">Hotellkedja</p>
+            </div>
+            <p>Uniformsprogram med löpande påfyllnad.</p>
+            <a class="case-link" href="/bevis.html">Se case <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="case-media" role="img" aria-label="Platshållare för produktbild, uniformsprogram"><div></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AFFÄRSOMRÅDEN — horisontell karusell, pilarna styrs av js/home.js -->
+  <section class="areas" aria-labelledby="areas-heading">
+    <div class="wrap">
+      <span class="label" data-reveal>[ Affärsområden ]</span>
+      <h2 id="areas-heading" data-reveal>Sex affärsområden.</h2>
+      <div class="areas-controls">
+        <span class="areas-count" aria-live="polite"><span class="areas-current">01</span> / 06</span>
+        <button type="button" class="areas-prev" aria-label="Föregående affärsområde">←</button>
+        <button type="button" class="areas-next" aria-label="Nästa affärsområde">→</button>
+      </div>
+    </div>
+    <ul class="area-track" tabindex="0" aria-label="Affärsområden">
+      <li class="area area--women"><div class="area-card"><div></div><span class="area-name">WOMEN</span></div><p>Dam – från basplagg till hela kollektioner</p></li>
+      <li class="area area--men"><div class="area-card"><div></div><span class="area-name">MEN</span></div><p>Herr – från basplagg till hela kollektioner</p></li>
+      <li class="area area--kids"><div class="area-card"><div></div><span class="area-name">CHILDREN</span></div><p>Barn – mode och funktion</p></li>
+      <li class="area area--sports"><div class="area-card"><div></div><span class="area-name">SPORTS</span></div><p>Sport – mode och funktion</p></li>
+      <li class="area area--outer"><div class="area-card"><div></div><span class="area-name">OUTERWEAR</span></div><p>Ytterkläder – för alla säsonger</p></li>
+      <li class="area area--under"><div class="area-card"><div></div><span class="area-name">UNDERWEAR &amp; ACCESSORIES</span></div><p>Underkläder &amp; accessoarer</p></li>
+    </ul>
+  </section>
+
+  <!-- MÖRKT BAND -->
+  <section class="band" aria-labelledby="band-heading">
+    <div class="wrap band-inner">
+      <span class="label">[ Dam · Herr · Barn · Sport · Ytterkläder · Underkläder &amp; accessoarer ]</span>
+      <div class="band-bottom">
+        <h2 id="band-heading" data-reveal>
+          <span class="line">Hela garderoben.</span>
+          <span class="line">En partner.</span>
+        </h2>
+        <p>Berätta vad du behöver –<br>vi tar fram hela kollektionen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="contact" aria-labelledby="contact-heading">
+    <div class="wrap contact-grid">
+      <div data-reveal>
+        <span class="label">[ Kontakt ]</span>
+        <h2 id="contact-heading">Låt oss skapa din nästa kollektion.</h2>
+        <a class="pill" href="/kontakt.html"><span aria-hidden="true">↗</span> Starta ett projekt</a>
+      </div>
+      <dl class="contact-info" data-reveal>
+        <dt>Info:</dt>
+        <dd>
+          <a href="mailto:info@franchetti.se">info@franchetti.se</a><br>
+          <a href="tel:+4631810450">+46 31 81 04 50</a><br>
+          Gamla Almedalsvägen 1D, 412 63 Göteborg
+        </dd>
+        <dd class="contact-pitch">Planerar du en ny kollektion eller vill du utveckla ditt sortiment? Berätta om ditt projekt så tar vi det vidare tillsammans.</dd>
+      </dl>
     </div>
   </section>
 
@@ -318,8 +346,11 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <p>R. Franchetti AB · Box 3155, 400 10 Göteborg · Gamla Almedalsvägen 1D, 412 63 Göteborg</p>
-    <p>Tel: +46 31 81 04 50 · <a href="mailto:info@franchetti.se">info@franchetti.se</a></p>
+    <span class="footer-mark" aria-hidden="true">FRANCHETTI</span>
+    <div class="footer-meta">
+      <p>© 2026 R. Franchetti AB · Göteborg</p>
+      <p>Box 3155, 400 10 Göteborg</p>
+    </div>
   </div>
 </footer>
 
